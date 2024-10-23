@@ -1,0 +1,15 @@
+{
+  "name": "tcplecture",
+  "version": "1.0.0",
+  "description": "Computer networking refers to interconnected computing devices that can exchange data and share resources with each other. Essentially two or multiple devices communicating with one another.",
+  "main": "chatServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
