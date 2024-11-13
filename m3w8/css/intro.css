@@ -1,0 +1,24 @@
+h1 {
+    color: rebeccapurple;
+}
+li {
+    color: blue;
+}
+ul .slicedBread {
+    color:brown;
+}
+/* Elements can only have one id */
+/* Rule of thumb, only one id per page */
+#groceryItem {
+    color: whitesmoke;
+    font-weight: bold;
+}
+.fontRed {
+    color:red;
+}
+.fontItalic {
+    font-style: italic;
+}
+.slicedBread {
+    color:orange !important;
+}

@@ -1,0 +1,69 @@
+#box-model {
+    color: white;
+    display: block;
+    /* box-sizing: border-box; */
+
+    /* Content: */
+    width: 300px;
+    height: 160px;
+    background-color: gray;
+
+    /* Padding: */
+    /* padding: 24px 24px 24px 24px; */
+    /* padding: 24px 24px 24px; */
+    /* padding: 24px 24px; */
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+
+    /* Border: */
+    border-top: 24px solid red;
+    border-right: 24px solid green;
+    border-bottom: 24px solid yellow;
+    border-left: 24px solid blue;
+
+    /* Margin: */
+    /* margin-top: 24px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    margin-left: 24px; */
+    margin-top: 52px;
+    margin-right: auto; /* margin auto on left/right will centre */
+    margin-bottom: 52px;
+    margin-left: auto; /* margin auto on left/right will centre */
+}
+#content-model {
+    color: white;
+    display: block;
+
+    /* Content: */
+    width: 300px;
+    height: 160px;
+    background-color: gray;
+
+    /* Padding: */
+    /* padding: 24px 24px 24px 24px; */
+    /* padding: 24px 24px 24px; */
+    /* padding: 24px 24px; */
+    padding-top: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+
+    /* Border: */
+    border-top: 24px solid red;
+    border-right: 24px solid green;
+    border-bottom: 24px solid yellow;
+    border-left: 24px solid blue;
+
+    /* Margin: */
+    /* margin-top: 24px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    margin-left: 24px; */
+    margin-top: 52px;
+    margin-right: auto; /* margin auto on left/right will centre */
+    margin-bottom: 52px;
+    margin-left: auto; /* margin auto on left/right will centre */
+}
