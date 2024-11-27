@@ -1,0 +1,51 @@
+@import '_variables';
+
+.parentBox > h2 {
+    border: 5px solid black;
+    height: 200px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    background: rgb(255, 135, 135);
+}
+.blue {
+    background: rgb(69, 76, 225);
+}
+.green {
+    background: rgb(170, 255, 167);
+}
+.yellow {
+    background: rgb(251, 248, 171);
+}
+
+/* Media for desktop views */
+/* Set display flex */
+/* These styles will only be applied if the desktop screen is at least 1024px */
+/* One for mobile devices -> 486px */
+/* One for tablet devices -> 640px*/
+/* One for desktop devices -> 1024px */
+/* One for 4k monitors ->1440px*/
+@media only screen and (min-width: 1024px){
+    .parentBox {
+        display: flex;
+        justify-content: space-around;
+        h2 {
+            width: 200px;
+        }
+    }
+}
+/* Tablet query */
+@media only screen and (min-width: 640px) and (max-width: 1023px){
+    .parentBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            width: 400px;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+// Borders around each item
+// Reduce the image sizes -> make them all the same
+// Add some colour
+$borderType: solid;
+@mixin stylingList($bgcolor: white) {
+    border: 5px $borderType black;
+    background-color: $bgcolor;
+    padding: 5px;
+    margin: 2px;
+}
+
+@mixin organizeMiddle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+    font-size: 100px !important;
+}
+
+h3 {
+    font-size: 50px !important;
+}
+img {
+    width: 300px;
+}
+
+li {
+    @include stylingList(rgb(245, 169, 142));
+    width: 50%;
+
+}
+
+ul {
+    @include stylingList(rgb(104, 104, 104));
+    list-style: none;
+    @include organizeMiddle;
+    width: 75%;
+}
+.sectionContainer {
+    @include organizeMiddle;
+}
