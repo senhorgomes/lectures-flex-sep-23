@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS albums CASCADE;
+DROP TABLE IF EXISTS songs CASCADE;
+CREATE TABLE albums (
+    id SERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    artist_name VARCHAR(255) NOT NULL,
+    release_date DATE
+);
+CREATE TABLE songs (
+    id SERIAL PRIMARY KEY NOT NULL,
+    album_id INTEGER REFERENCES albums(id) ON DELETE CASCADE,
+    track_number INTEGER NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    rating INTEGER NOT NULL
+);
