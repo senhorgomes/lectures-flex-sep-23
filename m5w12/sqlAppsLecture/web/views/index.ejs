@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page for Villains</title>
+</head>
+
+<body>
+    <h1>Index page for Villains</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Villain Name</th>
+                <th>Movie</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through our movie villains -->
+            <% for(const villainObject of movieVillains) { %>
+                <tr>
+                    <td><%= villainObject.villain %></td>
+                    <td><%= villainObject.movie %></td>
+                    <td>
+                        <form method="POST" action="/delete/<%= villainObject.id %>">
+                            <button type="'submit">Delete Villain</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+
+</html>
