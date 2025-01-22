@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App</title>
+
+    <!-- React Library Core: -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React Library DOM: -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel (for JSX Compatibility): -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>React App</h1>
+    <!-- We need an element for our React App to live! -->
+    <div id="our-react-container">
+        <!-- Inside of this DIV container -->
+    </div>
+    <script type="text/babel">
+        const domContainerElement = document.getElementById('our-react-container');
+
+        // Tell React which element our app should live in.
+        const reactRoot = ReactDOM.createRoot(domContainerElement);
+
+        // Our component looks a little different...
+        function HelloComponent() {
+            return( 
+                <div className="header">
+                    <p>Hello, World!</p>
+                    <p>How is everyone?</p>
+                </div>
+            );
+        }
+
+        reactRoot.render(HelloComponent());
+    </script>
+</body>
+
+</html>
