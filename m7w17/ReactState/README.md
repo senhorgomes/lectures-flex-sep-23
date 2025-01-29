@@ -84,70 +84,6 @@ In the example above, the App component is the parent component, and the ChildCo
 
 Props enable you to create reusable and customizable components by providing different data and behaviors to them based on the needs of the parent components.
 
-### Conditional Rendering
-
-Conditional rendering in React allows you to show or hide components or elements based on certain conditions. Here are a few examples of conditional rendering in React:
-
-```jsx
-function App() {
-  const greetings = true;
-
-  return <div>{greetings ? <h1>Hello!</h1> : <h1>Go Away</h1>}</div>;
-}
-```
-
-In this example, the `<h1>Hello!</h1>`is rendered if `greetings` is true, otherwise the `<h1>Go Away</h1>` is rendered.
-
-### More Examples:
-
-(explanation below the code)
-
-```jsx
-const DemotivationalPoster = (props) => {
-  console.log(props);
-  const img =
-    "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/19/1_4692108.jpg";
-
-  return (
-    <div className="poster">
-      <img className="poster--img" src={props.img ? props.img : img} />
-      <h2>{props.title || "no title :("}</h2>
-      <p>{props.desc || "no description :("}</p>
-    </div>
-  );
-};
-```
-
-This component uses turnary operator to render either the `img variable` , or the `prop.img`.
-
-the `||` operator works the way that, if the left side of the `||` is `falsey` then the right side will be rendered.
-
-### Looping through data and display it as many components
-
-```jsx
-const array = [
-  { id: 1, title: "my title", desc: "my desc" },
-  { id: 2, title: "aaa", desc: "aa" },
-  { id: 3, title: "bbb", desc: "bb" },
-];
-
-const App = () => {
-  /////////// DONT DO THIS
-  // const posters = [];
-
-  // for (let obj of array) {
-  //   posters.push(<DemotivationalPoster title={obj.title} desc={obj.desc}/>)
-  // }
-
-  //////// DO THIS
-
-  const posters2 = array.map((obj) => {
-    return <DemotivationalPoster key={obj.id} title={obj.title} desc={obj.desc} />;
-  });
-  return <div>{posters2}</div>;
-};
-```
-
 In React, it is common to use the map function instead of a traditional for loop when rendering lists or arrays of data. There are several reasons why using map is preferred in React:
 
 - Simplicity and readability: The map function provides a more concise and expressive way to iterate over an array and transform each element into JSX components. It simplifies the code and makes it easier to understand.
@@ -156,4 +92,79 @@ In React, it is common to use the map function instead of a traditional for loop
 
 - Integration with JSX: The map function integrates well with JSX syntax. It allows you to map each element in an array to a corresponding JSX element without the need for manual concatenation or building complex HTML strings.
 
-Credit to Francis
+## React State
+
+When we try to update local variables in React, we notice that the changes won't reflect in our App.
+
+```jsx
+function Counter() {
+    const handleClick = () => {
+        count++;
+    }
+
+    return (
+        <div>
+            {/* This will not update */}
+            <h2>{count}</h2>
+            <button onClick={()=>handleClick()}>Increase!</button>
+        </div> 
+     );
+}
+
+export default Counter;
+```
+
+This is because of two reasons:
+
+- Local variables don't carry onto different renders
+- Any changes made to a local variable will not trigger a render or a re-render
+
+### How do we fix this?
+
+We can fix this by adding a state variable from `useState`.
+
+```jsx
+import { useState } from 'react';
+
+function Counter() {
+
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        setCount(count + 1);
+    }
+
+    return (
+        <div>
+            <h2>{count}</h2>
+            <button onClick={()=>handleClick()}>Increase!</button>
+        </div> 
+     );
+}
+
+export default Counter;
+```
+
+`useState` returns an array with two elements, a getter and a setter.
+
+The getter will retrieve the value of state, while the setter will be used to modify the value of state.
+Everytime we update state with `setState`, this will trigger a rerender in our component. The rerender will fetch the new value of our state and display it for us.
+
+### More about useState
+
+There are some things we need to note about this hook
+
+- Hooks should be called at the top of your function
+- State shouldn't be too complex, if it is we may be better off breaking it up
+- State is asynchronous. We shouldn't rely on console.log to show us an updated state. Use react dev tools instead.
+- When updating state, we should never modify the state variable directly. Instead we should use `prev`
+
+```javascript
+setState((prev) => ...)
+```
+
+References:
+[React State Variable](https://react.dev/learn/state-a-components-memory)
+[useState](https://react.dev/reference/react/useState)
+
+
