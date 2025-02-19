@@ -1,0 +1,8 @@
+- Review our Rock-Paper-Scissors app
+- Review missing logic
+- Create helper functions for missing logic
+    - AI selector
+- Build them using unit tests
+- Integrate them using Integration tests
+    - Integrate Ai selector function into the app
+    - Create a Cheat mode for the AI
