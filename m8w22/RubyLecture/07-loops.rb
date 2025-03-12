@@ -21,12 +21,12 @@ end
 
 # While loop
 
-counter = 0
+i = 0
 
-# while counter <= 10 do
-#     puts "Counter is at #{counter}"
-#     counter += 1
-# end
+while i <= 10 do
+    puts "Counter is at #{counter}"
+    counter += 1
+end
 
 # Break loop
 
@@ -74,3 +74,5 @@ end
 (50...100).each do |number|
     puts number
 end
+
+1000.times 
