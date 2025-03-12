@@ -20,12 +20,11 @@
 
 - Javascript, HTML, CSS, React, Ruby, Rails
     - Look into FREE courses, maybe a tutorial, do some coding challenges and start there
-    - Video tutorials-> Tech-fluencers -> DO NOT USE REACT USE THIS INSTEAD
-    - OMG THIS NEW FRAMEWORK IS A REACT KILLER
+    - Video tutorials-> Avoid Tech-fluencers
 
 - Publish an android
     - Googled it, how do i publish an app
-    -> What language do i need to develop an android app?
+    -> What language do i need to develop an android app?Y
     -> IDE -> Android dev studio
     -> Youtube video
     -> Tutorials on publishing apps
