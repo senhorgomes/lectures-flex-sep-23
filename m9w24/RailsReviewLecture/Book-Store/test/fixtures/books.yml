@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  page_count: 1
+  print_date: 2025-03-18
+  publisher: MyString
+  genre: MyString
+  author: one
+
+two:
+  title: MyString
+  page_count: 1
+  print_date: 2025-03-18
+  publisher: MyString
+  genre: MyString
+  author: two
